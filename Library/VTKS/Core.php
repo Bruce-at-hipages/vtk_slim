@@ -87,14 +87,8 @@ namespace VTKS
 /**
  * default namespace (global)
  */
-namespace {
-    /**
-     * autoload override
-     * @param $class
-     */
-    function __autoload($class)
-    {
-        return \VTKS\Core::autoload($class);
-    };
+namespace
+{
+    spl_autoload_register('\VTKS\Core::autoload');
 }
 ?>
